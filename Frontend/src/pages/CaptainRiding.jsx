@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from 'react-router-dom'
 import FinishRide from "../components/FinishRide";
 
 const CaptainRiding = () => {
@@ -56,9 +56,7 @@ const CaptainRiding = () => {
         <h5 className="p-1 text-center w-[93%] absolute top-0">
           <i className="text-3xl text-gray-800 ri-arrow-up-wide-line"></i>
         </h5>
-        <h4 className="text-xl font-semibold">
-          {rideData ? `Ride ID: ${rideData._id}` : "4 KM away"}
-        </h4>
+        <h4 className='text-xl font-semibold'>{'4 KM away'}</h4>
         <button className="bg-green-600 text-white font-semibold p-3 px-10 rounded-lg">
           Complete Ride
         </button>
@@ -68,7 +66,7 @@ const CaptainRiding = () => {
         className="fixed h-screen translate-y-full w-full z-10 bottom-0 bg-white px-3 py-6 pt-12"
       >
         <FinishRide
-          rideData={rideData}
+          ride={rideData}
           setFinishRidePanel={setFinishRidePanel}
         />
       </div>
