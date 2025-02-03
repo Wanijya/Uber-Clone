@@ -24,7 +24,7 @@ const ConfirmRidePopUp = (props) => {
     if (response.status === 200) {
       props.setConfirmRidePopupPanel(false);
       props.setRidePopupPanel(false);
-      navigate("/captain-riding", { state: { ride: response.data } });
+      navigate("/captain-riding");
     }
   };
 
@@ -83,7 +83,7 @@ const ConfirmRidePopUp = (props) => {
           </div>
         </div>
         <div className="mt-6 w-full">
-        <form onSubmit={submitHander}>
+          <form onSubmit={submitHander}>
             <input
               value={otp}
               onChange={(e) => setOtp(e.target.value)}
@@ -91,7 +91,9 @@ const ConfirmRidePopUp = (props) => {
               type="text"
               placeholder="Enter OTP"
             />
-            <button className='w-full mt-5 text-lg flex justify-center bg-green-600 text-white font-semibold p-3 rounded-lg'>Confirm</button>
+            <button className="w-full mt-5 text-lg flex justify-center bg-green-600 text-white font-semibold p-3 rounded-lg">
+              Confirm
+            </button>
             <button
               onClick={() => {
                 props.setConfirmRidePopupPanel(false);
